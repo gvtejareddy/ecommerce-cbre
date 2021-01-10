@@ -1,0 +1,52 @@
+<div class="container pt-4">
+    <div class="jumbotron">
+        <div class="row" *ngIf="ps.currentProduct">
+            <div class="col-6">{{ps.currentProduct.name}}</div>
+            <div class="col-6 text-right blue-color">
+
+                {{ps.currentProduct.price | currency}}
+                <button class="primary" (click)="addToCart()">Add To Cart</button>
+            </div>
+            <div class="row pt-4">
+
+                <div class="col pb-4 pt-4">
+                    <div class="product-box">
+                        <img [attr.src]="ps.currentProduct.image_url" alt="productname">
+
+                        <div class="card stretched-link">
+                            <div class="card-header">
+
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <b>Name :</b> {{ps.currentProduct.name}}
+                                    </div>
+                                    <div class="col-12">
+                                        <b>Author </b> <span class="split"
+                                            *ngFor="let productAuthor of ps.currentProduct.author">
+                                            {{productAuthor}}</span>
+                                    </div>
+                                    <div class="col-12">
+                                        <b>Published Year : </b> {{ps.currentProduct.publishedDate}}
+                                    </div>
+                                    <div class="col-12">
+                                        <b>Description : </b> {{ps.currentProduct.description}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" *ngIf="!ps.currentProduct">
+            <div class="col-12">
+                <b>Please Select a Product from Home Page</b>
+            </div>
+
+        </div>
+    </div>

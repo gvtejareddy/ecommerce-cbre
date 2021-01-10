@@ -1,0 +1,11 @@
+.color-white {
+  color: white;
+}
+
+.count {
+  padding: 6px;
+  font-size: 20px;
+  position: absolute;
+  color: #ec7f0f;
+  top: -6px;
+}

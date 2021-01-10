@@ -1,0 +1,37 @@
+<div class="container p-6 pt-4">
+
+
+    <div class="row">
+        <div class="col-12"><b>Cart</b></div>
+
+    </div>
+    <div class="row">
+        <div class="col-12"><b>Total Cost : </b> {{cartTotal | currency }}</div>
+    </div>
+    <div class="row" *ngIf="productsInCart.length>0">
+
+        <div class="col-3 pb-4 pt-4" *ngFor="let product of productsInCart;let i = index">
+            <div class="product-box cursor" >
+
+                <div class="card stretched-link">
+                    <div class="card-header">
+                        {{product.name}}
+                    </div>
+                    <div class="card-body">
+                        <span class="split" *ngFor="let productAuthor of product.author">{{productAuthor}} </span>
+                    </div>
+                    <div class="card-footer green-color">
+                        {{product.price | currency}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row pt-4" *ngIf="productsInCart.length==0">
+        <div class="col-12">
+            <b>Please Select a Product from Home Page</b>
+        </div>
+
+    </div>
+</div>
